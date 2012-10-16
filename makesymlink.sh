@@ -22,7 +22,7 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symbolic links
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/.file ~/dotfiles_old/
+	mv ~/.$file ~/dotfiles_old/
 	echo "Creating symbolic link to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done
