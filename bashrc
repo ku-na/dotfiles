@@ -108,4 +108,5 @@ fi
 /usr/bin/mint-fortune
 
 # set path
-PATH="."
+export PATH=$PATH:./:~/src/ParaView-3.14.1-Linux-32bit/bin
+
