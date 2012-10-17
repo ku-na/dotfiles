@@ -62,6 +62,7 @@ endif
 " viminfoを作成しない
 " set viminfo=
 " クリップボードを共有
+set clipboard+=autoselect
 set clipboard+=unnamed
 " 8進数を無効にする。<C-a>,<C-x>に影響する
 set nrformats-=octal
@@ -346,6 +347,25 @@ let g:vimwiki_list = [wiki_1]
 let g:vimwiki_html_header_numbering=2
 let g:vimwiki_html_header_numbering_sym='.'
 
+"--- Vundle でプラグイン管理 ---
+set nocompatible
+filetype off
+
+set rtp+=~/dotfiles/vim/bundle/vundle/
+call vundle#rc()
+" Vundle!!
+Bundle 'gmarik/vundle'
+" vim-scripts repos
+Bundle 'vimwiki'
+" original repos on github
+Bundle 'mattn/calendar-vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/neocomplcache'
+Bundle 'thinca/vim-quickrun'
+
+" non github repos
+
+filetype plugin indent on
 "----------------------------------------
 " 一時設定
 "----------------------------------------
