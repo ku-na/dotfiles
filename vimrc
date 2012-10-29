@@ -363,7 +363,7 @@ function SaneFortran (foo)
 		let b:fortran_dialect="f90"
 		let b:fortran_do_enddo=1
 		source ~/.vim/fortran_indent.vim
-	elseif a:foo == 'f95'
+	if a:foo == 'f95'
 		let g:fortran_have_tabs=1
 		let g:fortran_more_precise=1
 		let b:fortran_free_source=1
