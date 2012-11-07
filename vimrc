@@ -376,7 +376,8 @@ function SaneFortran (foo)
 	endif
     return 0
 endfunction
-autocmd BufReadPre *.f90 call SaneFortran ('f95')
+autocmd BufReadPre *.f90 call SaneFortran ('f90')
+autocmd BufReadPre *.f95 call SaneFortran('f95')
 syntax on
 filetype indent on
 
@@ -406,6 +407,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'c9s/perlomni.vim'
+Bundle 'mineiro/vim-latex.git'
 
 " non github repos
 
