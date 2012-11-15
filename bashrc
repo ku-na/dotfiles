@@ -108,5 +108,7 @@ fi
 /usr/bin/mint-fortune
 
 # set path
-export PATH=$PATH:./:~/src/ParaView-3.14.1-Linux-32bit/bin
+export PATH=$PATH:./:~/src/ParaView-3.14.1-Linux-32bit/bin:/usr/local/texlive/2012/bin/i386-linux
+export MANPATH=$MANPATH:/usr/local/texlive/2012/texmf/doc/man
+export INFOPATH=$INFOPATH:/usr/local/texlive/2012/texmf/doc/info
 

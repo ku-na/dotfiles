@@ -338,48 +338,10 @@ endif
 "----------------------------------------
 " 各種プラグイン設定
 "----------------------------------------
-"--- fortran ---
-:let fortran_have_tabs=1
-:let fortran_free_source=1
-:let fortran_more_precise=1
-:syntax on
-set ruler
-
-set shiftwidth=4
-set showcmd
-set tabstop=4
-set wrapmargin=2
-set ignorecase
-set guioptions=agirLM"mT 
-set vb t_vb= 
-set mouse=a
-
-function SaneFortran (foo) 
-    if a:foo == 'f90'
-		let g:fortran_have_tabs=1
-		let g:fortran_more_precise=1
-		let b:fortran_free_source=1
-		let b:fortran_fixed_source=0
-		let b:fortran_dialect="f90"
-		let b:fortran_do_enddo=1
-		source ~/.vim/fortran_indent.vim
-	elseif a:foo == 'f95'
-		let g:fortran_have_tabs=1
-		let g:fortran_more_precise=1
-		let b:fortran_free_source=1
-		let b:fortran_fixed_source=0
-		let b:fortran_dialect="f95"
-		let b:fortran_do_enddo=1
-		source ~/.vim/fortran_indent.vim
-	else
-		unlet! fortran_free_source 
-	endif
-    return 0
-endfunction
-autocmd BufReadPre *.f90 call SaneFortran ('f90')
-autocmd BufReadPre *.f95 call SaneFortran('f95')
-syntax on
-filetype indent on
+"---latex suite---
+"set grepprg=grep\ -nH\ $*
+"let g:tex_flavor='latex'
+"let g:Tex_DefaultTargetFormat = 'pdf'
 
 "--- vimwiki---
 let wiki_1 = {}
@@ -401,6 +363,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 " vim-scripts repos
 Bundle 'vimwiki'
+Bundle 'sudo.vim'
 " original repos on github
 Bundle 'mattn/calendar-vim'
 Bundle 'Shougo/unite.vim'
