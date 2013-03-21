@@ -4,9 +4,9 @@
 ###
 
 ### variables
-dir=~/dotfiles
-olddir=~/dotfiles_old
-files="bashrc vimrc vim"
+dir=~/.dotfiles
+olddir=~/.dotfiles_old
+files="zshrc vimrc vim"
 ###
 
 # create dotfiles_old in homedir
@@ -22,7 +22,7 @@ echo "...done"
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symbolic links
 for file in $files; do
 	echo "Moving any existing dotfiles from ~ to $olddir"
-	mv ~/.$file ~/dotfiles_old/
+	mv ~/.$file $olddir
 	echo "Creating symbolic link to $file in home directory."
 	ln -s $dir/$file ~/.$file
 done

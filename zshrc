@@ -2,9 +2,14 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_verify
+setopt hist_no_store
+setopt hist_expand
 setopt appendhistory autocd extendedglob
-setopt EXTENDED_HISTORY		# puts timestamps in the history
-
+setopt extended_history # puts timestamps in the history
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 BLACK="%{"$'\033[01;30m'"%}"
 GREEN="%{"$'\033[01;32m'"%}"
@@ -83,6 +88,7 @@ compinit
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
+alias rm='~/bin/rm2trash.sh'
 alias j=jobs
 if ls -F --color=auto >&/dev/null; then
   alias ls="ls --color=auto"
@@ -96,15 +102,14 @@ alias grep='grep -E --color=always'
 # alias vim='gvim'
 
 export SCALA_HOME=/usr
-# for webcam
-export XLIB_SKIP_ARGB_VISUALS=1 
-alias sbcl='/home/user/research/lisp/sbcl-1.0.29/release/bin/sbcl'
-export SBCL_HOME=/home/user/research/lisp/sbcl-1.0.29/release/lib/sbcl/
-alias sbcl='/home/user/research/lisp/sbcl-1.0.29/release/bin/sbcl'
 
 #copy with progress bar
-alias cp='rsync -aP'
+# alias cp='rsync -aP'
 alias netstat='netstat -ap'
+
+# ssh to other machines
+alias epson='ssh -X kuroiwa@epson-156'
+alias xt='ssh -X r2210@xt4'
 
 #exports
 # path=(/home/user/clearsenses/ruby-enterprise-1.8.7-20090928/release/bin $path)
@@ -174,4 +179,8 @@ bindkey '^e' end-of-line
 #
 #rsync -tzhhP rsync://cdimage.ubuntu.com/cdimage/daily/20090420.1/jaunty-alternate-i386.iso .
 
-
+source /opt/intel/bin/compilervars.zsh intel64
+export FV_HOME=/opt/fv13.2/fv
+export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:$ld_library_path
+path=(. $path /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 )
+export PATH

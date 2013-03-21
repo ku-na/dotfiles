@@ -49,14 +49,14 @@ scriptencoding utf-8
 " ファイルの上書きの前にバックアップを作る/作らない
 " set writebackupを指定してもオプション 'backup' がオンでない限り、
 " バックアップは上書きに成功した後に削除される。
-set nowritebackup
+set writebackup
 " バックアップ/スワップファイルを作成する/しない
-set nobackup
+set backup
 if version >= 703
   " 再読込、vim終了後も継続するアンドゥ(7.3)
-  " set undofile
+  set undofile
   " アンドゥの保存場所(7.3)
-  " set undodir=.
+  set undodir=.
 endif
 " set noswapfile
 " viminfoを作成しない
@@ -105,9 +105,9 @@ set incsearch
 " 検索文字の強調表示
 set hlsearch
 " w,bの移動で認識する文字
-" set iskeyword=a-z,A-Z,48-57,_,.,-,>
+set iskeyword=a-z,A-Z,48-57,_,.,-,>
 " vimgrep をデフォルトのgrepとする場合internal
-" set grepprg=internal
+set grepprg=internal
 
 "----------------------------------------
 " 表示設定
@@ -121,7 +121,7 @@ set visualbell t_vb=
 " マクロ実行中などの画面再描画を行わない
 " WindowsXpまたはWindowテーマが「Windowsクラシック」で
 " Google日本語入力を使用するとIビームカーソルが残る場合にも有効
-" set lazyredraw
+set lazyredraw
 " Windowsでディレクトリパスの区切り文字表示に / を使えるようにする
 set shellslash
 " 行番号表示
@@ -158,7 +158,7 @@ if &t_Co > 2 || has('gui_running')
 endif
 " 色テーマ設定
 " gvimの色テーマは.gvimrcで指定する
-" set background=light
+" set background=dark
 " colorscheme solarized
 
 """"""""""""""""""""""""""""""
@@ -327,13 +327,13 @@ endif
 """"""""""""""""""""""""""""""
 " grep,tagsのためカレントディレクトリをファイルと同じディレクトリに移動する
 """"""""""""""""""""""""""""""
-" if exists('+autochdir')
-"   "autochdirがある場合カレントディレクトリを移動
-"   set autochdir
-" else
-"   "autochdirが存在しないが、カレントディレクトリを移動したい場合
-"   au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
-" endif
+if exists('+autochdir')
+  "autochdirがある場合カレントディレクトリを移動
+  set autochdir
+else
+  "autochdirが存在しないが、カレントディレクトリを移動したい場合
+  au BufEnter * execute ":silent! lcd " . escape(expand("%:p:h"), ' ')
+endif
 
 "----------------------------------------
 " 各種プラグイン設定
@@ -345,8 +345,8 @@ endif
 
 "--- vimwiki---
 let wiki_1 = {}
-let wiki_1.path = '/media/Shared Strage/Documents/vimwiki'
-let wiki_1.html_template = '/media/Shared Strage/Documents/vimwiki/templates/default.html'
+let wiki_1.path = '~/windows_shared/Documents/vimwiki'
+let wiki_1.html_template = '~/windows_shared/Documents/vimwiki/templates/default.html'
 let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vb': 'vb', 'fortran': 'fortran'}
 let g:vimwiki_list = [wiki_1]
 " vimwiki header
@@ -357,13 +357,19 @@ let g:vimwiki_html_header_numbering_sym='.'
 set nocompatible
 filetype off
 
-set rtp+=~/dotfiles/vim/bundle/vundle/
+set rtp+=~/.dotfiles/vim/bundle/vundle/
 call vundle#rc()
 " Vundle!!
-Bundle 'gmarik/vundle'
+" Bundle 'gmarik/vundle'
 " vim-scripts repos
+Bundle 'browser.vim'
 Bundle 'vimwiki'
 Bundle 'sudo.vim'
+Bundle 'Source-Explorer-srcexpl.vim'
+Bundle 'trinity.vim'
+Bundle 'The-NERD-tree'
+Bundle 'taglist.vim'
+Bundle 'vcscommand.vim'
 " original repos on github
 Bundle 'mattn/calendar-vim'
 Bundle 'Shougo/unite.vim'
