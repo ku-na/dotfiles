@@ -156,10 +156,6 @@ set listchars=tab:^\ ,trail:~
 if &t_Co > 2 || has('gui_running')
   syntax on
 endif
-" 色テーマ設定
-" gvimの色テーマは.gvimrcで指定する
-" set background=dark
-" colorscheme solarized
 
 """"""""""""""""""""""""""""""
 " ステータスラインに文字コード等表示
@@ -338,21 +334,6 @@ endif
 "----------------------------------------
 " 各種プラグイン設定
 "----------------------------------------
-"---latex suite---
-"set grepprg=grep\ -nH\ $*
-"let g:tex_flavor='latex'
-"let g:Tex_DefaultTargetFormat = 'pdf'
-
-"--- vimwiki---
-let wiki_1 = {}
-let wiki_1.path = '~/windows_shared/Documents/vimwiki'
-let wiki_1.html_template = '~/windows_shared/Documents/vimwiki/templates/default.html'
-let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vb': 'vb', 'fortran': 'fortran'}
-let g:vimwiki_list = [wiki_1]
-" vimwiki header
-let g:vimwiki_html_header_numbering=2
-let g:vimwiki_html_header_numbering_sym='.'
-
 "--- Vundle でプラグイン管理 ---
 set nocompatible
 filetype off
@@ -370,15 +351,77 @@ Bundle 'trinity.vim'
 Bundle 'The-NERD-tree'
 Bundle 'taglist.vim'
 Bundle 'vcscommand.vim'
+Bundle 'molokai'
 " original repos on github
+Bundle 'gmaric/vundle'
 Bundle 'mattn/calendar-vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'c9s/perlomni.vim'
-Bundle 'mineiro/vim-latex.git'
-
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'jcf/vim-latex.git'
 " non github repos
+
+colorscheme molokai
+" 色テーマ設定
+" gvimの色テーマは.gvimrcで指定する
+" set t_Co=256
+" set background=dark
+" let g:solarized_termcolors=&t_Co
+" let g:solarized_termtrans=1
+" colorscheme solarized
+
+"---latex suite---
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor='latex'
+" let g:Imap_UsePlaceHolders = 1
+" let g:Imap_DeleteEmptyPlaceHolders = 1
+" let g:Imap_StickyPlaceHolders = 0
+" let g:Tex_DefaultTargetFormat = 'pdf'
+" let g:Tex_FormatDependency_ps = 'dvi,ps'
+" let g:Tex_FormatDependency_pdf = 'dvi,pdf'
+" "let g:Tex_FormatDependency_pdf = 'dvi,ps,pdf'
+" ""let g:Tex_FormatDependency_pdf = 'pdf'
+" let g:Tex_CompileRule_dvi = 'platex -synctex=1 -interaction=nonstopmode $*'
+" "let g:Tex_CompileRule_dvi = 'uplatex -synctex=1 -interaction=nonstopmode $*'
+" "let g:Tex_CompileRule_ps = 'dvips -Ppdf -o $*.ps $*.dvi'
+" "let g:Tex_CompileRule_pdf = 'dvipdfmx $*.dvi'
+" ""let g:Tex_CompileRule_pdf = 'ps2pdf $*.ps'
+" let g:Tex_CompileRule_pdf = 'pdflatex -synctex=1 -interaction=nonstopmode $*'
+" ""let g:Tex_CompileRule_pdf = 'lualatex -synctex=1 -interaction=nonstopmode$*'
+" "let g:Tex_CompileRule_pdf = 'luajitlatex -synctex=1 -interaction=nonstopmode
+" "$*'
+" ""let g:Tex_CompileRule_pdf = 'xelatex -synctex=1 -interaction=nonstopmode $*'
+" let g:Tex_BibtexFlavor = 'pbibtex'
+" "let g:Tex_BibtexFlavor = 'upbibtex'
+" "let g:Tex_MakeIndexFlavor = 'mendex $*.idx'
+" "let g:Tex_UseEditorSettingInDVIViewer = 1
+" "let g:Tex_ViewRule_dvi = 'pxdvi -watchfile 1'
+" "let g:Tex_ViewRule_ps = 'evince'
+" ""let g:Tex_ViewRule_ps = 'okular --unique'
+" "let g:Tex_ViewRule_ps = 'zathura'
+" ""let g:Tex_ViewRule_ps = 'qpdfview --unique'
+" "let g:Tex_ViewRule_ps = 'gv --watch'
+" "let g:Tex_ViewRule_pdf = 'evince'
+" ""let g:Tex_ViewRule_pdf = 'okular --unique'
+" "let g:Tex_ViewRule_pdf = 'zathura -s -x "vim --servername synctex -n
+" "--remote-silent +\%{line} \%{input}"'
+" ""let g:Tex_ViewRule_pdf = 'qpdfview --unique'
+" "let g:Tex_ViewRule_pdf = 'pdfviewer'
+" ""let g:Tex_ViewRule_pdf = 'texworks'
+" "let g:Tex_ViewRule_pdf = 'acroread'
+" ""let g:Tex_ViewRule_pdf = 'pdfopen -viewer ar9-tab'
+
+"--- vimwiki---
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki'
+let wiki_1.html_template = '~/vimwiki/templates/default.html'
+let wiki_1.nested_syntaxes = {'python': 'python', 'c++': 'cpp', 'vb': 'vb', 'fortran': 'fortran'}
+let g:vimwiki_list = [wiki_1]
+" vimwiki header
+let g:vimwiki_html_header_numbering=2
+let g:vimwiki_html_header_numbering_sym='.'
 
 filetype plugin indent on
 

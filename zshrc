@@ -9,7 +9,6 @@ setopt hist_no_store
 setopt hist_expand
 setopt appendhistory autocd extendedglob
 setopt extended_history # puts timestamps in the history
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 BLACK="%{"$'\033[01;30m'"%}"
 GREEN="%{"$'\033[01;32m'"%}"
@@ -110,6 +109,7 @@ alias netstat='netstat -ap'
 # ssh to other machines
 alias epson='ssh -X kuroiwa@epson-156'
 alias xt='ssh -X r2210@xt4'
+alias cmst='ssh -X kuroiwa@cmst01'
 
 #exports
 # path=(/home/user/clearsenses/ruby-enterprise-1.8.7-20090928/release/bin $path)
@@ -181,6 +181,7 @@ bindkey '^e' end-of-line
 
 source /opt/intel/bin/compilervars.zsh intel64
 export FV_HOME=/opt/fv13.2/fv
+export MATVIEW_ROOT=/home/kuroiwa/Matview
 export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:$ld_library_path
-path=(. $path /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 )
+path=(. $path /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin )
 export PATH
