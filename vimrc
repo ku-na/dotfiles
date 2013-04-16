@@ -360,17 +360,18 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
 Bundle 'c9s/perlomni.vim'
 Bundle 'nanotech/jellybeans.vim'
-Bundle 'jcf/vim-latex.git'
+Bundle 'jcf/vim-latex'
+Bundle 'altercation/vim-colors-solarized'
 " non github repos
 
-colorscheme molokai
+" colorscheme molokai
 " 色テーマ設定
 " gvimの色テーマは.gvimrcで指定する
-" set t_Co=256
-" set background=dark
-" let g:solarized_termcolors=&t_Co
-" let g:solarized_termtrans=1
-" colorscheme solarized
+set t_Co=256
+set background=dark
+let g:solarized_termcolors=&t_Co
+let g:solarized_termtrans=1
+colorscheme solarized
 
 "---latex suite---
 set grepprg=grep\ -nH\ $*
@@ -515,4 +516,5 @@ let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 "----------------------------------------
 " 一時設定
-"----------------------------------------
+"
+"---------------------------------------

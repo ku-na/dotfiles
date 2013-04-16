@@ -18,6 +18,11 @@ BLUE="%{"$'\033[01;34m'"%}"
 BOLD="%{"$'\033[01;39m'"%}"
 NORM="%{"$'\033[00m'"%}"
 
+PURPLE="%{"$'\033[35m'"%}"
+PINK="%{"$'\033[01;35m'"%}"
+WHITE="%{"$'\033[01;37m'"%}"
+BROWN="%{"$'\033[33m'"%}"
+
 autoload -Uz vcs_info
 
 # prompt (if running screen, show window #)
@@ -27,9 +32,13 @@ else
 #       export PS1="
 # <${YELLOW}%~${NORM}>
 # ${RED}%n${YELLOW}@${BLUE}%U%m%u$%(!.#.$) "
-export PS1="[${RED}%n${YELLOW}@${BLUE}%U%m%u$:${GREEN}%2c${NORM}]%(!.#.$) "
+# export PS1="[${RED}%n${YELLOW}@${BLUE}%U%m%u$:${GREEN}%2c${NORM}]%(!.#.$) "
+export PS1="[${PURPLE}%n${WHITE}@${PINK}%U%m%u$:${WHITE}%2c${NORM}]%(!.#.$) "
+# export PS1="[%F{red}%n%F{yellow}@%F{blue}%U%m%u$:%F{green}%2c${NORM}]%(!.#.$) "
 # right prompt - time/date stamp
-export RPS1="${GREEN}(%D{%m-%d %H:%M})${NORM}"
+# export RPS1="${GREEN}(%D{%m-%d %H:%M})${NORM}"
+export RPS1="${BROWN}(%D{%m-%d %H:%M})${NORM}"
+# export RPS1="%F{green}(%D{%m-%d %H:%M})${NORM}"
 # this right prompt is for any kind of repository info - svn, git, mercurial ,etc. courtesy of vcs_info
 # export RPS1="${YELLOW}%1v${NORM}"
 fi
@@ -178,7 +187,8 @@ bindkey '^e' end-of-line
 #}
 #
 #rsync -tzhhP rsync://cdimage.ubuntu.com/cdimage/daily/20090420.1/jaunty-alternate-i386.iso .
-
+export TERM=xterm-256color
+eval `dircolors ~/.dir_colors`
 source /opt/intel/bin/compilervars.zsh intel64
 export FV_HOME=/opt/fv13.2/fv
 export MATVIEW_ROOT=/home/kuroiwa/Matview
