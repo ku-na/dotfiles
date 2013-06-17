@@ -96,7 +96,7 @@ compinit
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'
 alias mkdir='nocorrect mkdir'
-alias rm='~/bin/rm2trash.sh'
+alias rm='~/.bin/rm2trash.sh'
 alias j=jobs
 if ls -F --color=auto >&/dev/null; then
   alias ls="ls --color=auto"
@@ -108,11 +108,13 @@ alias ..='cd ..'
 alias .='pwd'
 alias grep='grep -E --color=always'
 # alias vim='gvim'
+alias convert=''
+alias display=''
 
 export SCALA_HOME=/usr
 
 #copy with progress bar
-# alias cp='rsync -aP'
+alias cp='rsync -aP'
 alias netstat='netstat -ap'
 
 # ssh to other machines
@@ -192,6 +194,6 @@ eval `dircolors ~/.dir_colors`
 source /opt/intel/bin/compilervars.zsh intel64
 export FV_HOME=/opt/fv13.2/fv
 export MATVIEW_ROOT=/home/kuroiwa/Matview
-export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:$ld_library_path
-path=(. $path /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin )
+export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:/opt/mpich2/mpich-3.0.1/lib:$ld_library_path
+path=(. /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
 export PATH
