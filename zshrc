@@ -108,8 +108,8 @@ alias ..='cd ..'
 alias .='pwd'
 alias grep='grep -E --color=always'
 # alias vim='gvim'
-alias convert=''
-alias display=''
+alias convert='/usr/bin/convert'
+alias display='/usr/bin/display'
 
 export SCALA_HOME=/usr
 
