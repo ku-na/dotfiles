@@ -194,6 +194,6 @@ eval `dircolors ~/.dir_colors`
 source /opt/intel/bin/compilervars.zsh intel64
 export FV_HOME=/opt/fv13.2/fv
 export MATVIEW_ROOT=/home/kuroiwa/Matview
-export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:/opt/mpich2/mpich-3.0.1/lib:$ld_library_path
-path=(. /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
+export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:/opt/openmpi-1.6.3/lib:$ld_library_path
+path=(. /opt/openmpi-1.6.3/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
 export PATH

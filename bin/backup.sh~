@@ -1,6 +1,9 @@
-#!/bin/sh
+#!/bin/zsh
 
-users=`ls /home/`
+echo "=================================="
+echo "BACKUP STARTED:`date +%Y/%m/%d\ %H:%M:%S"
+
+users=(`ls /home/`)
 today=`date +%Y%m%d`
 ex_file_rar="/home/kuroiwa/.backup_ex_rar"
 ex_file_tar="/home/kuroiwa/.backup_ex_tar"
@@ -10,10 +13,11 @@ bogus="$backup_home/bogus"
 # # rar
 # cmd_compress="rar"
 # opt_compress="a -r -ol -x@${ex_file_rar}"
+# ext="rar"
 
 # tar
 cmd_compress="tar"
-opt_compress="cfj -X ${ex_file_tar}"
+opt_compress="cfvj -X ${ex_file_tar}"
 ext="tar.bz2"
 
 echo "mkdir $bogus"
@@ -32,3 +36,5 @@ $cmd_compress $opt_compress ${backup_home}/${today}_epson-156.${ext} kuroiwa/sha
 #
 echo "/bin/rm -rf $bogus"
 /bin/rm -rf $bogus
+
+echo "BACKUP ENDED:`date +%Y/%m/%d\ %H:%M:%S`"
