@@ -2,13 +2,14 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
-setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 setopt hist_ignore_space
 setopt hist_verify
 setopt hist_no_store
 setopt hist_expand
 setopt appendhistory autocd extendedglob
 setopt extended_history # puts timestamps in the history
+setopt share_history
 
 BLACK="%{"$'\033[01;30m'"%}"
 GREEN="%{"$'\033[01;32m'"%}"
@@ -105,7 +106,7 @@ else
 fi
 alias ll="ls -l"
 alias ..='cd ..'
-alias .='pwd'
+# alias .='pwd'
 alias grep='grep -E --color=always'
 # alias vim='gvim'
 alias convert='/usr/bin/convert'
@@ -120,6 +121,8 @@ alias netstat='netstat -ap'
 # ssh to other machines
 alias epson='ssh -X kuroiwa@epson-156'
 alias xt='ssh -X r2210@xt4'
+alias cs300='ssh -X r2210@cs300'
+alias xc='ssh -X r2210@xc30-1'
 alias cmst='ssh -X kuroiwa@cmst01'
 
 #exports
@@ -191,9 +194,15 @@ bindkey '^e' end-of-line
 #rsync -tzhhP rsync://cdimage.ubuntu.com/cdimage/daily/20090420.1/jaunty-alternate-i386.iso .
 export TERM=xterm-256color
 eval `dircolors ~/.dir_colors`
-source /opt/intel/bin/compilervars.zsh intel64
-export FV_HOME=/opt/fv13.2/fv
+source /opt/intel/bin/compilervars.sh intel64
+source /opt/intel/vtune_amplifier_xe_2013/amplxe-vars.sh
+source /opt/intel/inspector_xe_2013/inspxe-vars.sh
+source /opt/intel/advisor_xe_2013/advixe-vars.sh
+export FV_HOME=/opt/fv
 export MATVIEW_ROOT=/home/kuroiwa/Matview
-export LD_LIBRARY_PATH=/opt/intel/composer_xe_2013.2.146/compiler/lib/intel64:/opt/openmpi-1.6.3/lib:$ld_library_path
-path=(. /opt/openmpi-1.6.3/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
+# export LD_LIBRARY_PATH=/opt/openmpi-1.6.3_intel/lib:$LD_LIBRARY_PATH
+# path=(. ~/.bin/ /opt/openmpi-1.6.3_intel/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
+export LD_LIBRARY_PATH=/opt/mpich2/mpich-3.0.1/lib:$LD_LIBRARY_PATH
+path=(. ~/.bin/ /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
 export PATH
+export PYTHONPATH=$PYTHONPATH:/usr/lib/python3.2/site-packages
