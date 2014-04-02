@@ -1,16 +1,5 @@
 "--- fortran ---
-syntax on
-set ruler
-
-set shiftwidth=2
-" set tabstop=2
-set showcmd
-set wrapmargin=2
-set ignorecase
-set guioptions=agirLM"mT 
-" set vb t_vb= 
-set mouse=a
-
+" filetype plugin indent on
 let s:extfname = expand("%:e")
 if s:extfname ==? "f90"
 "	let g:fortran_have_tabs=0
@@ -32,3 +21,16 @@ else
 	let b:fortran_fixed_source=1
 	unlet! fortran_free_source
 endif
+
+syntax on
+set ruler
+
+set shiftwidth=2
+" set tabstop=2
+set showcmd
+set wrapmargin=2
+set ignorecase
+set guioptions=agirLM"mT
+" set vb t_vb=
+set mouse=a
+

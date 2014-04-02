@@ -342,43 +342,47 @@ call vundle#rc()
 " Vundle!!
 " Bundle 'gmarik/vundle'
 " vim-scripts repos
-Bundle 'browser.vim'
 Bundle 'vimwiki'
 Bundle 'sudo.vim'
-Bundle 'Source-Explorer-srcexpl.vim'
-Bundle 'trinity.vim'
-Bundle 'The-NERD-tree'
+Bundle 'SrcExpl'
+Bundle 'Trinity'
 Bundle 'taglist.vim'
-Bundle 'vcscommand.vim'
-Bundle 'molokai'
 " original repos on github
 Bundle 'gmaric/vundle'
 Bundle 'mattn/calendar-vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/neocomplcache'
+" Bundle 'Shougo/neocomplete' # if vim ver. 7.3885 is available... go for it
+Bundle 'Shougo/neosnippet'
+Bundle 'Shougo/neosnippet-snippets'
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
 Bundle 'thinca/vim-quickrun'
 Bundle 'c9s/perlomni.vim'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'klen/python-mode'
+Bundle 'rcmdnk/vim-markdown'
+Bundle 'tpope/vim-fugitive'
 " non github repos
 Bundle 'http://git.code.sf.net/p/vim-latex/vim-latex'
 
-" colorscheme molokai
 " 色テーマ設定
 " gvimの色テーマは.gvimrcで指定する
 set t_Co=256
-set background=dark
+set background=light
 let g:solarized_termcolors=&t_Co
-let g:solarized_termtrans=1
+let g:solarized_termtrans=0
 colorscheme solarized
 
 filetype plugin indent on
 
-"--- neocomplecache ---
+" ---------------- "
+"  neocomplecache  "
+" ---------------- "
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 " Use neocomplcache.
@@ -466,9 +470,35 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-"----- Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+" ------------ "
+"  neosnippet  "
+" ------------ "
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For snippet_complete marker.
+if has('conceal')
+  set conceallevel=2 concealcursor=i
+endif
+
+" ------------------- "
+"   Powerline setup   "
+" ------------------- "
+
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
+let g:Powerline_symbols = 'fancy'
 
 ""
 "" Vim-LaTeX
