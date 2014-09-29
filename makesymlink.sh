@@ -6,7 +6,7 @@
 ### variables
 dir=~/.dotfiles
 olddir=~/.dotfiles_old
-files="zshrc vimrc vim bin dir_colors backup_ex_rar backup_ex_tar backup_ex_tar_sys"
+files="spectrum.zsh zshrc vimrc vim bin dir_colors backup_ex_rar backup_ex_tar backup_ex_tar_sys"
 ###
 
 # create dotfiles_old in homedir
