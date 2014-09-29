@@ -1,7 +1,7 @@
 "=============================================================================
 "    Description: .vimrcサンプル設定
 "         Author: anonymous
-"  Last Modified: 0000-00-00 07:03
+"  Last Modified: 14-08-20 Wed 11:21 AM
 "        Version: 0.00
 "=============================================================================
 set nocompatible
@@ -337,37 +337,41 @@ endif
 set nocompatible
 filetype off
 
-set rtp+=~/.dotfiles/vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " Vundle!!
-" Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 " vim-scripts repos
-Bundle 'vimwiki'
-Bundle 'sudo.vim'
-Bundle 'SrcExpl'
-Bundle 'Trinity'
-Bundle 'taglist.vim'
+Plugin 'vimwiki'
+Plugin 'sudo.vim'
+Plugin 'SrcExpl'
+Plugin 'Trinity'
+Plugin 'taglist.vim'
+Plugin 'VOoM'
 " original repos on github
-Bundle 'gmaric/vundle'
-Bundle 'mattn/calendar-vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/neocomplcache'
-" Bundle 'Shougo/neocomplete' # if vim ver. 7.3885 is available... go for it
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
-Bundle 'thinca/vim-quickrun'
-Bundle 'c9s/perlomni.vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'altercation/vim-colors-solarized'
-" Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'klen/python-mode'
-Bundle 'rcmdnk/vim-markdown'
-Bundle 'tpope/vim-fugitive'
+Plugin 'mattn/calendar-vim'
+Plugin 'Shougo/unite.vim'
+Plugin 'Shougo/neocomplcache'
+" Plugin 'Shougo/neocomplete' # if vim ver. 7.3885 is available... go for it
+Plugin 'Shougo/vimproc'
+Plugin 'Shougo/vimshell'
+Plugin 'thinca/vim-quickrun'
+Plugin 'c9s/perlomni.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'altercation/vim-colors-solarized'
+" Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'klen/python-mode'
+Plugin 'rcmdnk/vim-markdown'
+Plugin 'scrooloose/nerdcommenter'
+" Plugin 'Townk/vim-autoclose' # imcompatibility with neocomplcache
+Plugin 'jiangmiao/auto-pairs'
+" Plugin 'tpope/vim-fugitive'
 " non github repos
-Bundle 'http://git.code.sf.net/p/vim-latex/vim-latex'
+Plugin 'http://git.code.sf.net/p/vim-latex/vim-latex'
+
+call vundle#end()
+filetype plugin indent on
 
 " 色テーマ設定
 " gvimの色テーマは.gvimrcで指定する
@@ -377,7 +381,6 @@ let g:solarized_termcolors=&t_Co
 let g:solarized_termtrans=0
 colorscheme solarized
 
-filetype plugin indent on
 
 " ---------------- "
 "  neocomplecache  "
@@ -470,28 +473,6 @@ let g:neocomplcache_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
-" ------------ "
-"  neosnippet  "
-" ------------ "
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
 " ------------------- "
 "   Powerline setup   "
 " ------------------- "
@@ -558,7 +539,7 @@ let g:Tex_ViewRule_pdf = 'evince'
 let g:Tex_ViewRule_dvi = 'pxdvi -watchfile 1'
 ""let g:Tex_ViewRule_dvi = 'xdvi -watchfile 1'
 "----------------------------------------
-" 一時設定
-"
+" time stamp
 "---------------------------------------
-
+nmap <F3> a<C-R>=strftime("%Y-%m-%d %a %I:%M %p")<CR><Esc>
+imap <F3> <C-R>=strftime("%y-%m-%d %a %I:%M %p")<CR>

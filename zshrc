@@ -11,7 +11,7 @@ setopt appendhistory autocd extendedglob
 setopt extended_history # puts timestamps in the history
 setopt share_history
 
-source .bin/spectrum.zsh
+source ~/.bin/spectrum.zsh
 
 BLACK="%{"$'\033[01;30m'"%}"
 GREEN="%{"$'\033[01;32m'"%}"
@@ -36,7 +36,7 @@ else
 # <${YELLOW}%~${NORM}>
 # ${RED}%n${YELLOW}@${BLUE}%U%m%u$%(!.#.$) "
 # export PS1="[${RED}%n${YELLOW}@${BLUE}%U%m%u$:${GREEN}%2c${NORM}]%(!.#.$) "
-export PS1="[${PURPLE}%n${WHITE}@${PINK}%U%m%u$:${WHITE}%2c${GREEN}%1v${NORM}]%(!.#.$) "
+export PS1="[${PURPLE}%n${WHITE}@${PINK}%U%m%u$:${WHITE}%2c${FG[035]}%1v${NORM}]%(!.#.$) "
 # export PS1="[%F{red}%n%F{yellow}@%F{blue}%U%m%u$:%F{green}%2c${NORM}]%(!.#.$) "
 # right prompt - time/date stamp
 # export RPS1="${GREEN}(%D{%m-%d %H:%M})${NORM}"
@@ -205,6 +205,6 @@ export MATVIEW_ROOT=/home/kuroiwa/Matview
 # export LD_LIBRARY_PATH=/opt/openmpi-1.6.3_intel/lib:$LD_LIBRARY_PATH
 # path=(. ~/.bin/ /opt/openmpi-1.6.3_intel/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
 export LD_LIBRARY_PATH=/opt/mpich2/mpich-3.0.1/lib:$LD_LIBRARY_PATH
-path=(. ~/.bin/ /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin /opt/texlive/2013/bin/x86_64-linux $path )
+path=(. ~/.bin/ /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin /opt/texlive/2013/bin/x86_64-linux /opt/Qt5.0.2/Tools/QtCreator/bin $path )
 export PATH
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python3.2/site-packages
