@@ -9,7 +9,7 @@ setopt hist_no_store
 setopt hist_expand
 setopt appendhistory autocd extendedglob
 setopt extended_history # puts timestamps in the history
-setopt share_history
+# setopt share_history
 
 source ~/.bin/spectrum.zsh
 

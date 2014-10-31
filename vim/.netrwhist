@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/kuroiwa/hdd2/gitlab/nao/doc/bcm_quadtree/contents'
-let g:netrw_dirhist_2='/home/kuroiwa/Projects/2012-flow_simulator/2013-BCM_quadtree/doc/vimwiki/repo'
-let g:netrw_dirhist_3='/home/kuroiwa/.dotfiles/vim/ftplugin'
-let g:netrw_dirhist_4='/home/kuroiwa/hdd2/gitlab/bs_k/cmake_bcm/src'
-let g:netrw_dirhist_5='/home/kuroiwa/hdd2/gitlab/bs_k/cmake_uniform'
-let g:netrw_dirhist_6='/home/kuroiwa/hdd2/gitlab/bs_k/cmake_uniform/src'
-let g:netrw_dirhist_7='/home/kuroiwa/hdd2/gitlab/bs_k/cmake_uniform/src/modules'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/home/kuroiwa/hdd2/gitlab/bcm_octree/cmake_stg3d_bcm/trunk/stg3d'
+let g:netrw_dirhist_2='/home/kuroiwa/hdd2/gitlab/bcm_octree/cmake_stg3d_bcm/trunk/stg3d/type'
