@@ -36,7 +36,8 @@ else
 # <${YELLOW}%~${NORM}>
 # ${RED}%n${YELLOW}@${BLUE}%U%m%u$%(!.#.$) "
 # export PS1="[${RED}%n${YELLOW}@${BLUE}%U%m%u$:${GREEN}%2c${NORM}]%(!.#.$) "
-export PS1="[${PURPLE}%n${WHITE}@${PINK}%U%m%u$:${WHITE}%2c${FG[035]}%1v${NORM}]%(!.#.$) "
+# export PS1="[${PURPLE}%n${WHITE}@${PINK}%U%m%u$:${WHITE}%2c${FG[035]}%1v${NORM}]%(!.#.$) "
+export PS1="[$FG[006]%n${WHITE}@$FG[178]%U%m%u$:${WHITE}%2c${NORM}]%(!.#.$) "
 # export PS1="[%F{red}%n%F{yellow}@%F{blue}%U%m%u$:%F{green}%2c${NORM}]%(!.#.$) "
 # right prompt - time/date stamp
 # export RPS1="${GREEN}(%D{%m-%d %H:%M})${NORM}"
@@ -196,15 +197,15 @@ bindkey '^e' end-of-line
 #rsync -tzhhP rsync://cdimage.ubuntu.com/cdimage/daily/20090420.1/jaunty-alternate-i386.iso .
 export TERM=xterm-256color
 eval `dircolors ~/.dir_colors`
-source /opt/intel/bin/compilervars.sh intel64
-source /opt/intel/vtune_amplifier_xe_2013/amplxe-vars.sh
-source /opt/intel/inspector_xe_2013/inspxe-vars.sh
-source /opt/intel/advisor_xe_2013/advixe-vars.sh
-export FV_HOME=/opt/fv
-export MATVIEW_ROOT=/home/kuroiwa/Matview
+# source /opt/intel/bin/compilervars.sh intel64
+# source /opt/intel/vtune_amplifier_xe_2013/amplxe-vars.sh
+# source /opt/intel/inspector_xe_2013/inspxe-vars.sh
+# source /opt/intel/advisor_xe_2013/advixe-vars.sh
+# export FV_HOME=/opt/fv
+# export MATVIEW_ROOT=/home/kuroiwa/Matview
 # export LD_LIBRARY_PATH=/opt/openmpi-1.6.3_intel/lib:$LD_LIBRARY_PATH
 # path=(. ~/.bin/ /opt/openmpi-1.6.3_intel/bin /opt/intel/bin /opt/fv13.2/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin $path )
-export LD_LIBRARY_PATH=/opt/mpich2/mpich-3.0.1/lib:$LD_LIBRARY_PATH
+# export LD_LIBRARY_PATH=/opt/mpich2/mpich-3.0.1/lib:$LD_LIBRARY_PATH
 path=(. ~/.bin/ /opt/mpich2/mpich-3.0.1/bin /opt/intel/bin /opt/fv/bin /opt/Pointwise/PointwiseV17.0R1 /opt/MatView/bin /opt/texlive/2013/bin/x86_64-linux /opt/Qt5.0.2/Tools/QtCreator/bin $path )
 export PATH
 export PYTHONPATH=$PYTHONPATH:/usr/lib/python3.2/site-packages
